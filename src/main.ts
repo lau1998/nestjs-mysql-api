@@ -3,6 +3,7 @@ import { VersioningType } from '@nestjs/common/enums';
 import { Logger } from '@nestjs/common/services';
 import { AppModule } from './app.module';
 import { getConfig, IS_DEV } from './utils';
+import { generateDocument } from './doc'
 
 export const config = getConfig();
 const PORT = config.PORT || 8080;
@@ -21,6 +22,8 @@ async function bootstrap() {
     defaultVersion: '1', // 不指定默认版本为v1
     type: VersioningType.URI,
   });
+  // 创建文档
+  generateDocument(app);
 
   // 给请求添加prefix
   app.setGlobalPrefix(PREFIX);

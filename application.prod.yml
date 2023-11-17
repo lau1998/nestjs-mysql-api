@@ -9,9 +9,9 @@ datasource:
   driverName: mysql
   host: localhost
   port: 3306
-  database: nestjs-mysql-api
+  database: nest_admin_api
   username: root
-  password: 123456
+  password: liuchen520
   charset: utf8mb4
   loc: Asia/Shanghai
   logging: true
